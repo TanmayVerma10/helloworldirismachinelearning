@@ -18,7 +18,7 @@ label_encoder = LabelEncoder()
 y = label_encoder.fit_transform(y)  # Converts labels like "Iris-setosa" to numbers
 
 # Train Logistic Regression model
-model = LogisticRegression(solver="liblinear")  # Using liblinear for small datasets
+model = LogisticRegression(solver='lbfgs', max_iter=1000)
 model.fit(X, y)
 
 @app.route('/')
